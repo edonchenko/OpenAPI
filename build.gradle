@@ -17,6 +17,9 @@ ext {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+	implementation 'io.github.openfeign:feign-httpclient'
+	implementation 'io.github.openfeign:feign-okhttp'
 
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -49,9 +52,9 @@ task buildPetStoreServerCode(type: org.openapitools.generator.gradle.plugin.task
 			java8               : "true",
 			dateLibrary         : "java8",
 			serializationLibrary: "jackson",
-			library             : "spring-boot",
+			library             : "spring-cloud",
 			useBeanValidation   : "true",
-			interfaceOnly       : "true",
+			interfaceOnly       : "false",
 			serializableModel   : "true",
 			useTags             : "true"
 	]
